@@ -8,7 +8,7 @@ let add (student: string) (grade: int) (school: School): School =
     match school with
     | s when s.ContainsKey(grade) ->
         let students = student :: school.[grade] |> List.sort
-        school.Remove(grade).Add(grade, students)
+        school.Add(grade, students)
     | _ -> school.Add(grade, [student])
 
 let roster (school: School): string list =
